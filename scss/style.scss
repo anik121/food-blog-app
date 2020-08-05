@@ -1,0 +1,73 @@
+@import "default";
+
+
+
+#AppWrapper{
+  position: relative;
+  background-color: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+  header.menubar{
+    width: 100%;
+    margin-top: 20px;
+    @include flex-between;
+    .foodLog-menu{
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    .foodLog-avatar{
+      width: 50px;
+      height: 50px;
+      img{
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+  .foodLog-searchbar{
+    width: 100%;
+    background-color: #F1F5F6;
+    padding: 10px 30px;
+    margin: 20px 0;
+    border-radius: 230px;
+    @include flex-align-center;
+    label{
+      width: 25px;
+      opacity: 0.6;
+    }
+    input{
+      flex: 1;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      height: 100%;
+      font-size: 20px;
+      padding-left: 16px;
+    }
+  }
+  //search bar end
+  .foodLog-slider-box{
+    .title{
+      transform: translateY(-50%) rotate(271deg);
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      font-weight: bold;
+      font-size: 100%;
+      z-index: 2;
+    }
+    .foodLog-slider{
+      width: 90%;
+      margin-left: 10%;
+      .item{
+        img{
+          border-radius: 20px;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+      }
+    }
+  }
+}
