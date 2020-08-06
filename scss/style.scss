@@ -13,13 +13,11 @@
     margin-top: 20px;
     @include flex-between;
     .foodLog-menu{
-      width: 40px;
-      height: 40px;
+      width: 30px;
       cursor: pointer;
     }
     .foodLog-avatar{
-      width: 50px;
-      height: 50px;
+      width: 40px;
       img{
         width: 100%;
         height: auto;
@@ -50,14 +48,19 @@
   }
   //search bar end
   .foodLog-slider-box{
+    position: relative;
     .title{
-      transform: translateY(-50%) rotate(271deg);
+      transform: rotate(271deg);
       position: absolute;
-      left: -10px;
-      top: 50%;
+      left: -30px;
+      top: 15%;
       font-weight: bold;
       font-size: 100%;
       z-index: 2;
+    }
+    // Food Slider
+    .owl-stage-outer{
+      padding: 0 0 20px 0;
     }
     .foodLog-slider{
       width: 90%;
@@ -65,9 +68,234 @@
       .item{
         img{
           border-radius: 20px;
-          box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+          box-shadow: 0 10px 10px -5px rgba(0,0,0,0.2);
         }
       }
     }
   }
+  // Food Option
+  .foodLog-option{
+    padding-left: 30px;
+    ul{
+      @include none-style;
+      display: flex;
+      justify-content: space-between;
+    }
+    li{
+      display: inline-block;
+      text-align: center;
+      &:hover svg{
+        background-color: tomato;
+        stroke: white;
+      }
+      a{
+        color: $txtColor;
+      }
+      span{
+        text-transform: capitalize;
+        font-size: 14px;
+        font-weight: bold;
+        user-select: none;
+      }
+      svg{
+        width: 45px;
+        height: auto;
+        padding: 8px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 99, 71, 0.2);
+        @include transition(0.5);
+      }
+    }
+  }
+
+  // Food Post
+  .foodLog-post{
+    position: relative;
+    margin: 40px 0 90px 0;
+    .foodLog-tabItem{
+      position: absolute;
+      left: -20px;
+      top: 0;
+      @include none-style;
+      li{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transform: rotate(180deg);
+        border-right: 5px solid transparent;
+        @include transition(0.5);
+        &.active{
+          border-color: tomato;
+          a{
+            color: tomato;
+          }
+        }
+        a{
+          padding: 0 30px 0 0;
+          display: block;
+        }
+      }
+    }
+    // All Post Item
+    .foodLog-post-list{
+      width: calc(100% - 50px);
+      margin-left: auto;
+      .post-list{
+        display: flex;
+        padding: 5px;
+        margin-bottom: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        @include transition(0.3);
+        &:hover{
+          box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        .post-thumb{
+          width: 80px;
+          height: 80px;
+          border-radius: 10px;
+          overflow: hidden;
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .post-meta-data{
+          position: relative;
+          flex: 1;
+          margin-left: 10px;
+          .title{
+            margin:0 0 5px 0;
+            font-size: 17px;
+            a{
+              color: $txtColor;
+            }
+          }
+          .like-post{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            svg{
+              width: 18px;
+              stroke: rgba(0,0,0,0.3);
+              fill: rgba(0,0,0,0.5);
+            }
+          }
+          .post-rating{
+            display: flex;
+            ul{
+              @include none-style;
+            }
+            li{
+              display: inline-block;
+              svg{
+                width: 14px;
+                fill: tomato;
+                stroke: tomato;
+              }
+            }
+            span{
+              font-size: 14px;
+              margin-top: 3px;
+              margin-left: 10px;
+              font-weight: bold;
+              color: $txtColor;
+            }
+          }
+          .nameAndPrice{
+            @include flex-between;
+            .name{
+              @include flex-align-center;
+              opacity: 0.5;
+              svg{
+                width: 16px;
+              }
+              span{
+                font-weight: bold;
+                font-size: 14px;
+                margin-left: 5px;
+              }
+            }
+            .price{
+              color: $orangeColor;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+
+  // fix navigation bar
+  .foodLog-navbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    border-radius: 30px 30px 0 0;
+    width: 100%;
+    padding: 0 30px;
+    ul{
+        @include none-style;
+        @include flex-between
+    }
+    li{
+      padding: 20px 0;
+      &.active{
+        svg{
+          stroke: tomato;
+          fill: rgba(255, 99, 71, 0.3);
+          @include transition(0.7);
+        }
+      }
+    }
+  }
+}
+
+#demoShow{
+  width: 100%;
+  height: 100vh;
+}
+@media(min-width: 451px){
+  body{
+    height: 100vh;
+  }
+  #AppWrapper{
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #demoShow{
+    width: 450px;
+    height: 600px;
+  }
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

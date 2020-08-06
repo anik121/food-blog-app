@@ -15,3 +15,11 @@
   justify-content: center;
   align-items: center;
 }
+@mixin none-style{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin transition($duration){
+  transition: all $duration + s
+}

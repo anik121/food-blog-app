@@ -1,73 +1,429 @@
 /*
   All Mixin
 */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 body {
   background-color: #F2D2DF;
   width: 100%;
-  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: #613141;
+}
 
 #AppWrapper {
   position: relative;
   background-color: white;
   width: 100%;
   max-width: 450px;
-  padding: 0 20px; }
-  #AppWrapper header.menubar {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between; }
-    #AppWrapper header.menubar .foodLog-menu {
-      width: 40px;
-      height: 40px;
-      cursor: pointer; }
-    #AppWrapper header.menubar .foodLog-avatar {
-      width: 50px;
-      height: 50px; }
-      #AppWrapper header.menubar .foodLog-avatar img {
-        width: 100%;
-        height: auto;
-        border-radius: 50%; }
-  #AppWrapper .foodLog-searchbar {
-    width: 100%;
-    background-color: #F1F5F6;
-    padding: 10px 30px;
-    margin: 20px 0;
-    border-radius: 230px;
-    display: flex;
-    align-items: center; }
-    #AppWrapper .foodLog-searchbar label {
-      width: 25px;
-      opacity: 0.6; }
-    #AppWrapper .foodLog-searchbar input {
-      flex: 1;
-      border: none;
-      outline: none;
-      background-color: transparent;
-      height: 100%;
-      font-size: 20px;
-      padding-left: 16px; }
-  #AppWrapper .foodLog-slider-box .title {
-    transform: translateY(-50%) rotate(271deg);
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    font-weight: bold;
-    font-size: 100%;
-    z-index: 2; }
-  #AppWrapper .foodLog-slider-box .foodLog-slider {
-    width: 90%;
-    margin-left: 10%; }
-    #AppWrapper .foodLog-slider-box .foodLog-slider .item img {
-      border-radius: 20px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); }
+  padding: 0 20px;
+}
 
+#AppWrapper header.menubar {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#AppWrapper header.menubar .foodLog-menu {
+  width: 30px;
+  cursor: pointer;
+}
+
+#AppWrapper header.menubar .foodLog-avatar {
+  width: 40px;
+}
+
+#AppWrapper header.menubar .foodLog-avatar img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+#AppWrapper .foodLog-searchbar {
+  width: 100%;
+  background-color: #F1F5F6;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border-radius: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#AppWrapper .foodLog-searchbar label {
+  width: 25px;
+  opacity: 0.6;
+}
+
+#AppWrapper .foodLog-searchbar input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 16px;
+}
+
+#AppWrapper .foodLog-slider-box {
+  position: relative;
+}
+
+#AppWrapper .foodLog-slider-box .title {
+  -webkit-transform: rotate(271deg);
+          transform: rotate(271deg);
+  position: absolute;
+  left: -30px;
+  top: 15%;
+  font-weight: bold;
+  font-size: 100%;
+  z-index: 2;
+}
+
+#AppWrapper .foodLog-slider-box .owl-stage-outer {
+  padding: 0 0 20px 0;
+}
+
+#AppWrapper .foodLog-slider-box .foodLog-slider {
+  width: 90%;
+  margin-left: 10%;
+}
+
+#AppWrapper .foodLog-slider-box .foodLog-slider .item img {
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+#AppWrapper .foodLog-option {
+  padding-left: 30px;
+}
+
+#AppWrapper .foodLog-option ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#AppWrapper .foodLog-option li {
+  display: inline-block;
+  text-align: center;
+}
+
+#AppWrapper .foodLog-option li:hover svg {
+  background-color: tomato;
+  stroke: white;
+}
+
+#AppWrapper .foodLog-option li a {
+  color: #613141;
+}
+
+#AppWrapper .foodLog-option li span {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#AppWrapper .foodLog-option li svg {
+  width: 45px;
+  height: auto;
+  padding: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 99, 71, 0.2);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#AppWrapper .foodLog-post {
+  position: relative;
+  margin: 40px 0 90px 0;
+}
+
+#AppWrapper .foodLog-post .foodLog-tabItem {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#AppWrapper .foodLog-post .foodLog-tabItem li {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  margin-bottom: 20px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border-right: 5px solid transparent;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#AppWrapper .foodLog-post .foodLog-tabItem li.active {
+  border-color: tomato;
+}
+
+#AppWrapper .foodLog-post .foodLog-tabItem li.active a {
+  color: tomato;
+}
+
+#AppWrapper .foodLog-post .foodLog-tabItem li a {
+  padding: 0 30px 0 0;
+  display: block;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list {
+  width: calc(100% - 50px);
+  margin-left: auto;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 10px;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .title {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .title a {
+  color: #613141;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .like-post {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .like-post svg {
+  width: 18px;
+  stroke: rgba(0, 0, 0, 0.3);
+  fill: rgba(0, 0, 0, 0.5);
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .post-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .post-rating ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .post-rating li {
+  display: inline-block;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .post-rating li svg {
+  width: 14px;
+  fill: tomato;
+  stroke: tomato;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .post-rating span {
+  font-size: 14px;
+  margin-top: 3px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #613141;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .nameAndPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .nameAndPrice .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.5;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .nameAndPrice .name svg {
+  width: 16px;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .nameAndPrice .name span {
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+#AppWrapper .foodLog-post .foodLog-post-list .post-list .post-meta-data .nameAndPrice .price {
+  color: #DA7F4B;
+  font-weight: bold;
+}
+
+#AppWrapper .foodLog-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  -webkit-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px 30px 0 0;
+  width: 100%;
+  padding: 0 30px;
+}
+
+#AppWrapper .foodLog-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#AppWrapper .foodLog-navbar li {
+  padding: 20px 0;
+}
+
+#AppWrapper .foodLog-navbar li.active svg {
+  stroke: tomato;
+  fill: rgba(255, 99, 71, 0.3);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+#demoShow {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (min-width: 451px) {
+  body {
+    height: 100vh;
+  }
+  #AppWrapper {
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #demoShow {
+    width: 450px;
+    height: 600px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 /*# sourceMappingURL=style.css.map */
