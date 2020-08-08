@@ -21,6 +21,12 @@ body{
   overflow-x: hidden;
   overflow-y: scroll;
 }
+.divide{
+  width: 90%;
+  background-color: white;
+  margin: 30px auto;
+  height: 1px;
+}
 a{
   text-decoration: none;
   color: $txtColor;
