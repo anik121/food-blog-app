@@ -1,17 +1,15 @@
 @import "default";
 
-
-
-#AppWrapper{
+#AppWrapper {
   position: relative;
   background-color: white;
   width: 100%;
   padding: 0 20px;
-  header.menubar{
+  header.menubar {
     width: 100%;
     margin-top: 20px;
     @include flex-center-between;
-    .foodLog-menu{
+    .foodLog-menu {
       width: 30px;
       cursor: pointer;
     }
@@ -20,27 +18,27 @@
       color: tomato;
       font-weight: bold;
     }
-    .foodLog-avatar{
+    .foodLog-avatar {
       width: 40px;
-      img{
+      img {
         width: 100%;
         height: auto;
         border-radius: 50%;
       }
     }
   }
-  .foodLog-searchbar{
+  .foodLog-searchbar {
     width: 100%;
-    background-color: #F1F5F6;
+    background-color: #f1f5f6;
     padding: 10px 20px;
     margin: 20px 0;
     border-radius: 230px;
     @include flex-align-center;
-    label{
+    label {
       width: 25px;
       opacity: 0.6;
     }
-    input{
+    input {
       flex: 1;
       border: none;
       outline: none;
@@ -51,9 +49,9 @@
     }
   }
   //search bar end
-  .foodLog-slider-box{
+  .foodLog-slider-box {
     position: relative;
-    .title{
+    .title {
       transform: rotate(271deg);
       position: absolute;
       left: -30px;
@@ -63,46 +61,47 @@
       z-index: 2;
     }
     // Food Slider
-    .owl-stage-outer{
+    .owl-stage-outer {
       padding: 0 0 20px 0;
     }
-    .foodLog-slider{
+    .foodLog-slider {
       width: 90%;
       margin-left: 10%;
-      .item{
-        img{
+      .item {
+        img {
           border-radius: 20px;
-          box-shadow: 0 10px 10px -5px rgba(0,0,0,0.2);
+          box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
         }
       }
     }
   }
 
   // Food Option
-  .foodLog-option{
-    padding-left: 30px;
-    ul{
+  .foodLog-option {
+    padding-left: 10%;
+    ul {
       @include none-style;
       display: flex;
       justify-content: space-between;
     }
-    li{
+    li {
       display: inline-block;
       text-align: center;
-      &:hover svg{
+      &:hover svg {
         background-color: tomato;
         stroke: white;
       }
-      a{
+      a {
         color: $txtColor;
       }
-      span{
+      span {
         text-transform: capitalize;
         font-size: 14px;
         font-weight: bold;
         user-select: none;
+        display: block;
       }
-      svg{
+      svg {
         width: 45px;
         height: auto;
         padding: 8px;
@@ -114,15 +113,15 @@
   }
 
   // Food Post
-  .foodLog-post{
+  .foodLog-post {
     position: relative;
     margin: 40px 0 90px 0;
-    .foodLog-tabItem{
+    .foodLog-tabItem {
       position: absolute;
       left: -20px;
       top: 0;
       @include none-style;
-      li{
+      li {
         writing-mode: vertical-rl;
         text-orientation: mixed;
         font-weight: bold;
@@ -130,79 +129,79 @@
         transform: rotate(180deg);
         border-right: 5px solid transparent;
         @include transition(0.5);
-        &.active{
+        &.active {
           border-color: tomato;
-          a{
+          a {
             color: tomato;
           }
         }
-        a{
+        a {
           padding: 0 30px 0 0;
           display: block;
         }
       }
     }
     // All Post Item
-    .foodLog-post-list{
+    .foodLog-post-list {
       width: calc(100% - 50px);
       margin-left: auto;
-      .post-list{
+      .post-list {
         display: flex;
         padding: 5px;
         margin-bottom: 20px;
         background-color: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         @include transition(0.3);
-        &:hover{
-          box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        &:hover {
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
-        .post-thumb{
+        .post-thumb {
           width: 80px;
           height: 80px;
           border-radius: 10px;
           overflow: hidden;
-          img{
+          img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
-        .post-meta-data{
+        .post-meta-data {
           position: relative;
           flex: 1;
           margin-left: 10px;
-          .title{
-            margin:0 0 5px 0;
+          .title {
+            margin: 0 0 5px 0;
             font-size: 17px;
-            a{
+            a {
               color: $txtColor;
             }
           }
-          .like-post{
+          .like-post {
             position: absolute;
             right: 5px;
             top: 5px;
-            svg{
+            svg {
               width: 18px;
-              stroke: rgba(0,0,0,0.3);
-              fill: rgba(0,0,0,0.5);
+              stroke: rgba(0, 0, 0, 0.3);
+              fill: rgba(0, 0, 0, 0.5);
             }
           }
-          .post-rating{
+          .post-rating {
             display: flex;
-            ul{
+            ul {
               @include none-style;
             }
-            li{
+            li {
               display: inline-block;
-              svg{
+              svg {
                 width: 14px;
                 fill: tomato;
                 stroke: tomato;
               }
             }
-            span{
+            span {
               font-size: 14px;
               margin-top: 3px;
               margin-left: 10px;
@@ -210,50 +209,49 @@
               color: $txtColor;
             }
           }
-          .nameAndPrice{
+          .nameAndPrice {
             @include flex-between;
-            .name{
+            .name {
               @include flex-align-center;
               opacity: 0.5;
-              svg{
+              svg {
                 width: 16px;
               }
-              span{
+              span {
                 font-weight: bold;
                 font-size: 14px;
                 margin-left: 5px;
               }
             }
-            .price{
+            .price {
               color: $orangeColor;
               font-weight: bold;
             }
           }
         }
       }
-      
     }
   }
 
   // fix navigation bar
-  .foodLog-navbar{
+  .foodLog-navbar {
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 100;
     background-color: white;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 30px 30px 0 0;
     width: 100%;
     padding: 0 30px;
-    ul{
-        @include none-style;
-        @include flex-between
+    ul {
+      @include none-style;
+      @include flex-between;
     }
-    li{
+    li {
       padding: 20px 0;
-      &.active{
-        svg{
+      &.active {
+        svg {
           stroke: tomato;
           fill: rgba(255, 99, 71, 0.3);
           @include transition(0.7);
@@ -263,7 +261,7 @@
   }
 }
 
-.sidebar{
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -276,81 +274,78 @@
   border-radius: 0 0 0 0;
   overflow-x: hidden;
   overflow-y: auto;
-  &.none-showing{
+  &.none-showing {
     transform: perspective(500px) rotateY(90deg);
     border-radius: 0 50% 50% 0;
   }
   @include transition(0.5);
-  .foodLog-profile{
+  .foodLog-profile {
     @include flex-align-center;
-    .close-sidebar{
+    .close-sidebar {
       position: absolute;
       right: 15px;
       top: 15px;
       color: white;
-      svg{
+      svg {
         width: 30px;
         height: auto;
       }
     }
-    img{
+    img {
       width: 80px;
       border-radius: 50%;
       margin-right: 10px;
     }
-    .meta-data{
+    .meta-data {
       color: white;
-      .name{
+      .name {
         margin: 0 0 10px 0;
       }
     }
   }
-  .menu-list{
+  .menu-list {
     @include none-style;
     width: 90%;
   }
-  li{
-    &:not(.divide){
+  li {
+    &:not(.divide) {
       margin-bottom: 10px;
     }
-    &.active a{
+    &.active a {
       background-color: white;
       color: #333333;
       border-radius: 0 20px 20px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-    a{
+    a {
       padding: 10px;
       @include transition(0.5);
       @include flex-align-center;
       color: white;
-      &:hover{
+      &:hover {
         border-radius: 0 20px 20px 0;
         background-color: white;
         color: #333;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       }
-      svg{
+      svg {
         margin-right: 10px;
       }
     }
   }
 }
 
-#demoShow{
+#demoShow {
   width: 100%;
   height: 100vh;
 }
-@media(min-width: 451px){
-  #demoShow{
+@media (min-width: 451px) {
+  #demoShow {
     width: 430px;
     height: 600px;
     border-radius: 20px;
   }
 }
-
-
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -359,15 +354,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
+
+@import "single_page";

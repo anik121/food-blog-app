@@ -1,16 +1,16 @@
 @import "mixin";
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-$primary_color: #F2D2DF;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+$primary_color: #f2d2df;
 $txtColor: #613141;
-$orangeColor: #DA7F4B;
+$orangeColor: #da7f4b;
 
-*{
+* {
   box-sizing: border-box;
 }
-html{
-  font-family: 'Source Sans Pro', sans-serif;
+html {
+  font-family: "Source Sans Pro", sans-serif;
 }
-body{
+body {
   background-color: $primary_color;
   width: 100%;
   display: flex;
@@ -21,13 +21,13 @@ body{
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.divide{
+.divide {
   width: 90%;
   background-color: white;
   margin: 30px auto;
   height: 1px;
 }
-a{
+a {
   text-decoration: none;
   color: $txtColor;
 }

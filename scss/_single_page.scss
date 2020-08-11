@@ -1,0 +1,85 @@
+#singlePageWrapper {
+  width: 100%;
+  position: relative;
+  .foodLog-thumbnail {
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+  .foodLog-post-content {
+    position: relative;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 40px 40px 50px 40px;
+    margin-top: -30px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    .foodLog-post-rating {
+      position: absolute;
+      top: -25px;
+      left: 40px;
+      background-color: white;
+      width: 50px;
+      height: 50px;
+      line-height: 65px;
+      text-align: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+      &.active {
+        svg {
+          @include transition(0.4);
+          stroke: tomato;
+          fill: tomato;
+        }
+      }
+    }
+    .post-title {
+      color: $txtColor;
+      font-size: 2.3rem;
+      margin: 0;
+    }
+    .meta-data {
+      @include none-style;
+      margin: 10px 0;
+      li {
+        display: flex;
+        align-items: center;
+        padding: 6px 0;
+        color: #da7f4b;
+        svg {
+          width: 16px;
+          height: auto;
+          margin-right: 6px;
+        }
+      }
+    }
+    .info {
+      p {
+        line-height: 25px;
+        text-align: justify;
+      }
+    }
+    .buy-btn {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: tomato;
+      color: white;
+      border-radius: 20px 20px 0 0;
+      font-size: 16px;
+      padding: 15px;
+      border: none;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        margin-right: 6px;
+      }
+    }
+  }
+}
