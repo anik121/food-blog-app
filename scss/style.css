@@ -41,6 +41,14 @@ a {
   color: #613141;
 }
 
+a.closeOuterItem {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 200;
+  color: white;
+}
+
 #AppWrapper {
   position: relative;
   background-color: white;
@@ -551,18 +559,21 @@ a {
      object-fit: cover;
 }
 
-#singlePageWrapper .foodLog-post-content {
-  position: relative;
+.foodLog-post-content {
+  position: fixed;
+  bottom: 40px;
   background-color: white;
   border-radius: 20px 20px 0 0;
-  padding: 40px 40px 50px 40px;
+  padding: 40px 40px 20px 40px;
   margin-top: -30px;
   width: 100%;
-  height: 100%;
-  z-index: 1;
+  height: calc(100% - 300px);
+  z-index: 101;
+  -webkit-animation: showing 0.4s ease-in-out;
+          animation: showing 0.4s ease-in-out;
 }
 
-#singlePageWrapper .foodLog-post-content .foodLog-post-rating {
+.foodLog-post-content .foodLog-post-rating {
   position: absolute;
   top: -25px;
   left: 40px;
@@ -576,27 +587,33 @@ a {
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-#singlePageWrapper .foodLog-post-content .foodLog-post-rating.active svg {
+.foodLog-post-content .foodLog-post-rating.active svg {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   stroke: tomato;
   fill: tomato;
 }
 
-#singlePageWrapper .foodLog-post-content .post-title {
+.foodLog-post-content .innerBox {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.foodLog-post-content .post-title {
   color: #613141;
   font-size: 2.3rem;
   margin: 0;
 }
 
-#singlePageWrapper .foodLog-post-content .meta-data {
+.foodLog-post-content .meta-data {
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin: 10px 0;
 }
 
-#singlePageWrapper .foodLog-post-content .meta-data li {
+.foodLog-post-content .meta-data li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -607,18 +624,18 @@ a {
   color: #da7f4b;
 }
 
-#singlePageWrapper .foodLog-post-content .meta-data li svg {
+.foodLog-post-content .meta-data li svg {
   width: 16px;
   height: auto;
   margin-right: 6px;
 }
 
-#singlePageWrapper .foodLog-post-content .info p {
+.foodLog-post-content .info p {
   line-height: 25px;
   text-align: justify;
 }
 
-#singlePageWrapper .foodLog-post-content .buy-btn {
+.foodLog-post-content .buy-btn {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -641,7 +658,33 @@ a {
           align-items: center;
 }
 
-#singlePageWrapper .foodLog-post-content .buy-btn svg {
+.foodLog-post-content .buy-btn svg {
   margin-right: 6px;
+}
+
+@-webkit-keyframes showing {
+  0% {
+    -webkit-transform: translateY(110%);
+            transform: translateY(110%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes showing {
+  0% {
+    -webkit-transform: translateY(110%);
+            transform: translateY(110%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

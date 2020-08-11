@@ -31,3 +31,10 @@ a {
   text-decoration: none;
   color: $txtColor;
 }
+a.closeOuterItem {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 200;
+  color: white;
+}
